@@ -24,8 +24,14 @@ const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(20, 20),
     new THREE.MeshStandardMaterial()
 )
+
 floor.rotation.x = - Math.PI * 0.5
 scene.add(floor)
+
+// House
+const house = new THREE.Group()
+scene.add(house)
+
 
 /**
  * Lights
