@@ -16,13 +16,21 @@ const canvas = document.querySelector('canvas.webgl')
 const scene = new THREE.Scene()
 
 /**
+ * Textures
+ */
+const textureLoader = new THREE.TextureLoader()
+
+/**
  * House
  */
 
 // Floor
 const floor = new THREE.Mesh(
     new THREE.PlaneGeometry(20, 20),
-    new THREE.MeshStandardMaterial()
+    new THREE.MeshStandardMaterial({
+        alphaMap: floorAlphaTexture,
+        transparent: true
+    })
 )
 
 floor.rotation.x = - Math.PI * 0.5
