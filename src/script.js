@@ -20,6 +20,9 @@ const scene = new THREE.Scene()
  */
 const textureLoader = new THREE.TextureLoader()
 
+// Floor
+const floorAlphaTexture = textureLoader.load('./floor/alpha.jpg')
+
 /**
  * House
  */
