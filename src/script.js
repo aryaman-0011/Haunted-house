@@ -41,6 +41,15 @@ const walls = new THREE.Mesh(
 walls.position.y = 1.25
 house.add(walls)
 
+// Roofs
+const roof = new THREE.Mesh(
+    new THREE.ConeGeometry(3.5, 1.5, 4),
+    new THREE.MeshStandardMaterial()
+)
+roof.position.y = 2.5 + 0.75
+roof.rotation.y = Math.PI * 0.25
+house.add(roof)
+
 /**
  * Lights
  */
