@@ -33,6 +33,14 @@ const house = new THREE.Group()
 scene.add(house)
 
 
+// Walls
+const walls = new THREE.Mesh(
+    new THREE.BoxGeometry(4, 2.5, 4),
+    new THREE.MeshStandardMaterial()
+)
+walls.position.y = 1.25
+house.add(walls)
+
 /**
  * Lights
  */
