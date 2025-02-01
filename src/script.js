@@ -56,7 +56,7 @@ const door = new THREE.Mesh(
     new THREE.MeshStandardMaterial()
 )
 door.position.y = 1
-door.position.z = 2
+door.position.z = 2 + 0.01
 house.add(door)
 
 /**
