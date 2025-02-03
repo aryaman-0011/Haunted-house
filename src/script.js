@@ -153,6 +153,7 @@ house.add(walls)
 const roof = new THREE.Mesh(
     new THREE.ConeGeometry(3.5, 1.5, 4),
     new THREE.MeshStandardMaterial({
+        color: '#E1C16E',
         map: roofColorTexture,
         aoMap: roofARMTexture,
         roughnessMap: roofARMTexture,
