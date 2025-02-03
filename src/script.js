@@ -270,6 +270,14 @@ doorLight.position.set(0, 2.2, 2.5)
 house.add(doorLight)
 
 /**
+ * Ghosts
+ */
+const ghost1 = new THREE.PointLight('#8800ff', 6)
+const ghost2 = new THREE.PointLight('#ff0088', 6)
+const ghost3 = new THREE.PointLight('#ff0000', 6)
+scene.add(ghost1, ghost2, ghost3)
+
+/**
  * Sizes
  */
 const sizes = {
