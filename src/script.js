@@ -54,9 +54,9 @@ const wallNormalTexture = textureLoader.load('./wall/castle_brick_broken_06_1k/c
 wallColorTexture.colorSpace = THREE.SRGBColorSpace
 
 // Roof
-const roofColorTexture = textureLoader.load('./roof/thatch_roof_angled_1k/thatch_roof_angled_diff_1k.jpg')
-const roofARMTexture = textureLoader.load('./roof/thatch_roof_angled_1k/thatch_roof_angled_arm_1k.jpg')
-const roofNormalTexture = textureLoader.load('./roof/thatch_roof_angled_1k/thatch_roof_angled_nor_gl_1k.jpg')
+const roofColorTexture = textureLoader.load('./roof/roof_slates_02_1k/roof_slates_02_diff_1k.jpg')
+const roofARMTexture = textureLoader.load('./roof/roof_slates_02_1k/roof_slates_02_arm_1k.jpg')
+const roofNormalTexture = textureLoader.load('./roof/roof_slates_02_1k/roof_slates_02_nor_gl_1k.jpg')
 
 roofColorTexture.colorSpace = THREE.SRGBColorSpace
 
@@ -70,9 +70,9 @@ roofNormalTexture.wrapS = THREE.RepeatWrapping
 
 
 // Bush
-const bushColorTexture = textureLoader.load('./bush/forest_leaves_03_1k/forest_leaves_03_diff_1k.jpg')
-const bushARMTexture = textureLoader.load('./bush/forest_leaves_03_1k/forest_leaves_03_arm_1k.jpg')
-const bushNormalTexture = textureLoader.load('./bush/forest_leaves_03_1k/forest_leaves_03_nor_gl_1k.jpg')
+const bushColorTexture = textureLoader.load('./bush/leaves_forest_ground_1k/leaves_forest_ground_diff_1k.jpg')
+const bushARMTexture = textureLoader.load('./bush/leaves_forest_ground_1k/leaves_forest_ground_arm_1k.jpg')
+const bushNormalTexture = textureLoader.load('./bush/leaves_forest_ground_1k/leaves_forest_ground_nor_gl_1k.jpg')
 
 bushColorTexture.colorSpace = THREE.SRGBColorSpace
 
@@ -154,7 +154,6 @@ house.add(walls)
 const roof = new THREE.Mesh(
     new THREE.ConeGeometry(3.5, 1.5, 4),
     new THREE.MeshStandardMaterial({
-        color: '#E1C16E',
         map: roofColorTexture,
         aoMap: roofARMTexture,
         roughnessMap: roofARMTexture,
@@ -205,17 +204,17 @@ bush1.rotation.x = -0.75
 const bush2 = new THREE.Mesh(bushGeometry, bushMaterial)
 bush2.scale.set(0.25, 0.25, 0.25)
 bush2.position.set(1.4, 0.1, 2.1)
-bush1.rotation.x = -0.75
+bush2.rotation.x = -0.75
 
 const bush3 = new THREE.Mesh(bushGeometry, bushMaterial)
 bush3.scale.set(0.4, 0.4, 0.4)
 bush3.position.set(- 0.8, 0.1, 2.2)
-bush1.rotation.x = -0.75
+bush3.rotation.x = -0.75
 
 const bush4 = new THREE.Mesh(bushGeometry, bushMaterial)
 bush4.scale.set(0.15, 0.15, 0.15)
 bush4.position.set(- 1, 0.05, 2.6)
-bush1.rotation.x = -0.75
+bush4.rotation.x = -0.75
 
 house.add(bush1, bush2, bush3, bush4)
 
@@ -379,6 +378,12 @@ sky.material.uniforms['rayleigh'].value = 3
 sky.material.uniforms['mieCoefficient'].value = 0.1
 sky.material.uniforms['mieDirectionalG'].value = 0.95
 sky.material.uniforms['sunPosition'].value.set(0.3, -0.038, -0.95)
+
+/**
+ * Fog
+ */
+// scene.fog = new THREE.Fog('#ff0000', 1, 13)
+scene.fog = new THREE.FogExp2('#02343f', 0.1)
 
 /**
  * Animate
